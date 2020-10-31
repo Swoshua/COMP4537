@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz Questions</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </head>
+    <body>
+        <div>
+            <h3>1) What would be logged?</h3>
+            <div>
+                <div>&emsp;<span style="color:red">const</span> phone = {</div>
+                <div>&emsp;&emsp;caller: "mom",</div>
+                <div>&emsp;&emsp;says: <span style="color:red">function</span>() {</div>
+                <div>&emsp;&emsp;&emsp;console.log('Hey, ${this.caller} just called.');</div>
+                <div>&emsp;&emsp;}</div>
+                <div>&emsp;};</div>
+                <div>&emsp;call.says();</div>
+            </div>
+        </div>
+        <br>
+        <input type="radio" name="q1" value="a">&emsp;a) Hey, undefined just called<br>
+        <input type="radio" name="q1" value="b">&emsp;b) Hey, mom just called<br>
+        <input type="radio" name="q1" value="c">&emsp;c) Hey, caller just called<br>
+
+        <br>
+        
+        <div>
+            <h3>2) What would be logged?</h3>
+            <div>
+                <div>&emsp;<span style="color:red">const</span> phone = {</div>
+                <div>&emsp;&emsp;caller: "mom",</div>
+                <div>&emsp;&emsp;says: () => {</div>
+                <div>&emsp;&emsp;&emsp;console.log('Hey, ${this.caller} just called.');</div>
+                <div>&emsp;&emsp;}</div>
+                <div>&emsp;};</div>
+                <div>&emsp;call.says();</div>
+            </div>
+        </div>
+        <br>
+        <input type="radio" name="q2" value="a">&emsp;a) Hey, undefined just called<br>
+        <input type="radio" name="q2" value="b">&emsp;b) Hey, mom just called<br>
+        <input type="radio" name="q2" value="c">&emsp;c) Hey, caller just called<br>
+
+        <br>
+
+        <div>
+            <h3>3) What would be logged?</h3>
+            <div>
+                <div>&emsp;<span style="color:red">const</span> phone = {</div>
+                <div>&emsp;&emsp;caller: "mom",</div>
+                <div>&emsp;&emsp;says: <span style="color:red">function</span>() {</div>
+                <div>&emsp;&emsp;&emsp;console.log('Hey, ${this.caller} just called.');</div>
+                <div>&emsp;&emsp;}</div>
+                <div>&emsp;};</div>
+                <div>&emsp;<span>let</span> newCall = call.says;</div>
+                <div>&emsp;newCall();</div>
+            </div>
+        </div>
+        <br>
+        <input type="radio" name="q3" value="a">&emsp;a) Hey, undefined just called<br>
+        <input type="radio" name="q3" value="b">&emsp;b) Hey, mom just called<br>
+
+        <br>
+
+        <div>
+            <h3>4) What would be logged?</h3>
+            <div>
+                <div>&emsp;<span style="color:red">function</span> anotherCaller() {</div>
+                <div>&emsp;&emsp;console.log('$(this.caller} called, too!');</div>
+                <div>&emsp;}</div>
+                <br>
+                <div>&emsp;<span style="color:red">const</span> phone = {</div>
+                <div>&emsp;&emsp;caller: "mom",</div>
+                <div>&emsp;&emsp;anotherCaller: anotherCaller,</div>
+                <div>&emsp;&emsp;says: <span style="color:red">function</span>() {</div>
+                <div>&emsp;&emsp;&emsp;console.log('Hey, ${this.caller} just called.');</div>
+                <div>&emsp;&emsp;}</div>
+                <div>&emsp;};</div>
+                <div>&emsp;<span>let</span> newCall = call.anotherCaller;</div>
+                <div>&emsp;newCall();</div>
+            </div>
+        </div>
+        <br>
+        <input type="radio" name="q4" value="a">&emsp;a) mom called, too!<br>
+        <input type="radio" name="q4" value="b">&emsp;b) Hey, mom just called<br>
+        <input type="radio" name="q4" value="b">&emsp;b) undefined called, too!<br>
+
+        <br>
+
+            
+        <div>
+            <h3>5) What is logged?</h3>
+            </div>
+                <div>&emsp;<span style="color:red">var</span> fullName = {</div>
+                <div>&emsp;&emsp;name: <span style="color:red">function</span>(){</div>
+                <div>&emsp;&emsp;&emsp;<span style="color:red">console.log</span>(<span style="color:red">this</span>.firstname + " " + <span style="color:red">this</span>.lastname);</div>
+                <div>&emsp;&emsp;}</div>
+                <div>&emsp;}</div>
+                <div>&emsp;<span style="color:red">var</span> person = {</div>
+                <div>&emsp;&emsp;firstname: "John",</div>
+                <div>&emsp;&emsp;lastname: "Doe",</div>
+                <div>&emsp;}</div>
+                <div>fullName.name.call(person);
+            </div>
+        </div>
+        <br>
+        <input type="radio" name="q5" value="a">&emsp;a) Undefined Undefined<br>
+        <input type="radio" name="q5" value="b">&emsp;b) John Doe<br>
+
+
+    </body>
+</html>
