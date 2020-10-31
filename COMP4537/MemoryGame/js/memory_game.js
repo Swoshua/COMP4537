@@ -28,6 +28,7 @@ function Tile(number){
         start.moves--;
         if (start.moves == 0){
             start.grid.disableClick();
+            playaudio();
             setTimeout(function() {
                 start.nextGrid();
             }, 1000);
@@ -89,7 +90,7 @@ function Grid(){
         $(this.name).animate(
             {deg: this.degree},
             {
-                duration: 600,
+                duration: 500,
                 step: function(angle){
                     $(this).css({transform: 'rotate(' + angle + "deg)"});
                 }
@@ -127,6 +128,7 @@ function Game(x) {
     this.correct = 0;
     this.nextGrid = function(){
         this.mtiles = this.grid.column;
+        playrotate();
         this.grid.rotate();
         if (this.score < 0){
             endgame();
@@ -155,6 +157,7 @@ function Game(x) {
         setTimeout(function (){
             game.grid.genCorrectTiles();
             setTimeout(function (){
+                playrotate();
                 game.grid.rotate();
                 setTimeout(function (){
                     game.grid.enableClick();
@@ -229,4 +232,14 @@ function endgame() {
 
 function restart() {
     location.reload();
+}
+
+function playaudio() {
+    let audio = new Audio('audio/finishgame.mp3');
+    audio.play();
+}
+
+function playrotate() {
+    let audio = new Audio('audio/rotate.mp3');
+    audio.play();
 }
