@@ -222,6 +222,7 @@ function terminate(){
 }
 
 function endgame() {
+    playaudio();
     $("#username").html(start.player);
     $("#final_score").html(start.score);
     $("#end_screen").fadeToggle(1200);

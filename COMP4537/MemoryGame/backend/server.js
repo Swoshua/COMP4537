@@ -1,14 +1,13 @@
 const express = require('express');
 const mysql = require('mysql');
-
 const app = express();
 
-var con = mysql.createConnection({
-    host: "jos-test.c4ztbtstxmqe.us-east-1.rds.amazonaws.com",
-    user: "admin",
-    password: "Jerome2020",
-    database: "AmirThing"
-});
+// var con = mysql.createConnection({
+//     host: "jos-test.c4ztbtstxmqe.us-east-1.rds.amazonaws.com",
+//     user: "admin",
+//     password: "Jerome2020",
+//     database: "AmirThing"
+// });
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -19,3 +18,4 @@ app.use((req, res, next) => {
 });
 
 var PORT = process.env.PORT || 8000;
+app.listen(PORT);
