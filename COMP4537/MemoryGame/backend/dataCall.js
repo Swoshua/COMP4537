@@ -9,7 +9,9 @@ async function submit() {
 
 async function leaderboards() {
     let url = `https://jl-memory-game.herokuapp.com/retrieve_score`;
-    let res = await fetch(url);
-    console.log(res.json());
-    return res.json();
+    fetch(url)
+    .then(response => {
+        console.log(response.json)
+    })
+    .catch((error) => {console.log(error)});
 }
