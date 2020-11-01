@@ -7,6 +7,7 @@ function submit() {
     .then(response => response.json())
     .then(data => console.log('success'));
     leaderboards();
+    document.getElementById('submit_button').onclick = null;
 }
 
 function leaderboards() {
