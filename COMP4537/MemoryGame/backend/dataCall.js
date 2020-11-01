@@ -14,7 +14,7 @@ function leaderboards() {
     fetch(url)
     .then(response => response.json())
     .then(data => {
-        console.log(data.results[0]);
+        console.log(data.results.length);
         $("leaderboards").empty();
         for (i = 0; i < data.results[0].length; i++){
             $("leaderboards").append("<li>" + data.results[i] + "</li>")
