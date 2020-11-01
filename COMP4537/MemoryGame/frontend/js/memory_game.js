@@ -222,13 +222,13 @@ function terminate(){
 }
 
 function endgame() {
-    playaudio();
     $("#username").html(start.player);
     $("#final_score").html(start.score);
     $("#end_screen").fadeToggle(1200);
     $("#submit_button").fadeToggle(1600);
     $("#restart_button").fadeToggle(1600);
     $("#game_over").fadeToggle(1600);
+    $("#leaderboards").fadeToggle(1600);
 }
 
 function restart() {
