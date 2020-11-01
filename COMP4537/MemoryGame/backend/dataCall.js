@@ -14,10 +14,10 @@ function leaderboards() {
     fetch(url)
     .then(response => response.json())
     .then(data => {
-        $("leaderboards").empty();
+        $("#leaderboards").empty();
         for (i = 0; i < data.results.length; i++){
             console.log(data.results[i]);
-            $("leaderboards").append("<li>" + data.results[i].name + "(" + data.results[i].score + ")" + "</li>");
+            $("#leaderboards").append("<li>" + data.results[i].name + "(" + data.results[i].score + ")" + "</li>");
         }
     })
     .catch(error => console.log(error));
