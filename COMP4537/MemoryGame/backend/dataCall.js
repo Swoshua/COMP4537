@@ -17,7 +17,7 @@ function leaderboards() {
         $("leaderboards").empty();
         for (i = 0; i < data.results.length; i++){
             console.log(data.results[i]);
-            $("leaderboards").append("<li>" + data.results[i] + "</li>")
+            $("leaderboards").append("<li>" + data.results[i].name + "(" + data.results[i].score + ")" + "</li>");
         }
     })
     .catch(error => console.log(error));
