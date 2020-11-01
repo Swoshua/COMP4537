@@ -1,10 +1,10 @@
-async function submit() {
-    let name = document.getElementById("name").value
-    let urlParams = new URLSearchParams(window.location.search)
-    let score = urlParams.get("score")
+function submit() {
+    let name = $("#username").text();
+    let score = $("#final_score").text();
     let url = `https://jl-memory-game.herokuapp.com/insert_score?name=${name}&${score}`
-    let res = await fetch(url)
-    return res.json()
+    fetch(url)
+    .then(response => response.json())
+    .then(data => console.log('success'));
 }
 
 function leaderboards() {
