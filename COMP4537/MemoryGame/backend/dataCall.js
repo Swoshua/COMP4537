@@ -10,7 +10,7 @@ async function submit() {
 function leaderboards() {
     let url = `https://jl-memory-game.herokuapp.com/retrieve_score`;
     fetch(url)
-    .then(response => console.log(response.json()))
+    .then(response => response.json())
     .then(data => console.log(data))
     .catch(error => console.log(error));
 }
