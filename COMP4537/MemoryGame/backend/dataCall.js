@@ -11,6 +11,6 @@ function leaderboards() {
     let url = `https://jl-memory-game.herokuapp.com/retrieve_score`;
     fetch(url)
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => console.log(data.results))
     .catch(error => console.log(error));
 }
