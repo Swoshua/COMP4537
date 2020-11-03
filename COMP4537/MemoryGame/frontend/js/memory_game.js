@@ -68,10 +68,12 @@ function Grid(){
         $("#square").append(newTile.returnHTML());
     };
     this.increase = function () {
-        if (this.row == this.column) {
-            this.column++;
-        } else if (this.row < this.column) {
-            this.row++;
+        if (this.row < 7 || this.column < 7){
+            if (this.row == this.column) {
+                this.column++;
+            } else if (this.row < this.column) {
+                this.row++;
+            }
         }
     };
     this.decrease = function () {
@@ -111,7 +113,7 @@ function Grid(){
         }
     };
     this.genCorrectTiles = function (){
-        let tile = genRanNum(this.tileStorage.length, this.column);
+        let tile = genRanNum(this.tileStorage.length, this.column + 2);
         for (i = 0; i < tile.length; i++){
             this.tileStorage[tile[i]].correctTile();
         }
@@ -123,11 +125,11 @@ function Game(x) {
     this.player = x;
     this.grid = new Grid();
     this.score = 0;
-    this.moves = this.grid.column;
+    this.moves = this.grid.column + 2;
     this.mtiles = this.grid.column;
     this.correct = 0;
     this.nextGrid = function(){
-        this.mtiles = this.grid.column;
+        this.mtiles = this.grid.column + 2;
         playrotate();
         this.grid.rotate();
         if (this.score < 0){
@@ -140,7 +142,7 @@ function Game(x) {
         }
         $("#level").html(this.grid.column - 3);
         this.correct = 0;
-        this.moves = this.grid.column;
+        this.moves = this.grid.column + 2;
         this.startRan();
     }
     this.stageup = function () {
